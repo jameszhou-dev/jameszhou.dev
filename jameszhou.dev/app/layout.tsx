@@ -27,11 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        <footer className="py-12">
-          <div className="site-container text-center muted">
-            © {new Date().getFullYear()} James Zhou — Built with Next.js
-          </div>
-        </footer>
+        
       </body>
     </html>
   );

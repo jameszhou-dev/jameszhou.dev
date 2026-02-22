@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Tabs() {
   const [tab, setTab] = useState<"projects" | "publications" | "personal">("projects");
@@ -23,13 +23,6 @@ export default function Tabs() {
           >
             Publications
           </button>
-          <button
-            onClick={() => setTab("personal")}
-            aria-selected={tab === "personal"}
-            className={`tab-btn px-4 py-2 text-lg rounded-md ${tab === "personal" ? "active" : "muted"}`}
-          >
-            Personal
-          </button>
         </div>
 
         {/* thin separator under the tabs (use about separator) */}
@@ -37,9 +30,57 @@ export default function Tabs() {
 
         <div className={`mt-6 ${tab ? "text-xl" : "text-xl"}`}>
           {tab === "projects" && (
-            <div className="pt-6 pb-6">
-              
-            </div>
+              <div className="pt-2 pb-2">
+                <div className="mt-0 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Project 1 */}
+                  <article className="card flex gap-4 items-start">
+                    <img src="/litmt.png" alt="LitMT screenshot" className="w-24 h-24 object-cover rounded-md flex-shrink-0" />
+                    <div className="flex-1">
+                      <a href="https://litmt.org" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[var(--accent)] transition-colors duration-150">
+                        LitMT
+                      </a>
+                      <p className="mt-1 muted text-sm">A full-stack research platform to facilitate the evaluation of LLM-generated literary translations (built w/ <a href="https://marzenakrp.github.io" target="_blank" rel="noopener noreferrer" className="nav-link">Marzena Karpinska</a>)</p>
+                      <div className="mt-3 flex flex-wrap gap-2 text-sm">
+                        <span className="px-2 py-1 bg-gray-100 rounded">Next.js</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">FastAPI</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">MongoDB</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  {/* Project 2 */}
+                  <article className="card flex gap-4 items-start">
+                    <img src="/terp.png" alt="TerpBot screenshot" className="w-24 h-24 object-cover rounded-md flex-shrink-0" />
+                    <div className="flex-1">
+                      <a href="https://github.com/jameszhou-dev/terpBot" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[var(--accent)] transition-colors duration-150">
+                        TerpBot
+                      </a>
+                      <p className="mt-1 muted text-sm">A RAG pipeline built to help UMD students find clubs and organizations that align with their interests</p>
+                      <div className="mt-3 flex flex-wrap gap-2 text-sm">
+                        <span className="px-2 py-1 bg-gray-100 rounded">Python</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">ChromaDB</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">Selenium</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  {/* Project 3 */}
+                  <article className="card flex gap-4 items-start">
+                    <img src="/SaveRe.png" alt="SaveRe screenshot" className="w-24 h-24 object-cover rounded-md flex-shrink-0" />
+                    <div className="flex-1">
+                      <a href="https://github.com/jameszhou-dev/project-gamma" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold hover:text-[var(--accent)] transition-colors duration-150">
+                        SaveRe
+                      </a>
+                      <p className="mt-1 muted text-sm">An AI companion that helps you use up your groceries before they expire (<a href="https://hackprinceton-fall-2025.devpost.com" target="_blank" rel="noopener noreferrer" className="nav-link">HackPrinceton Fall 2025</a>)</p>
+                      <div className="mt-3 flex flex-wrap gap-2 text-sm">
+                        <span className="px-2 py-1 bg-gray-100 rounded">Next.js</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">FastAPI</span>
+                        <span className="px-2 py-1 bg-gray-100 rounded">MongoDB</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
           )}
 
           {tab === "publications" && (
@@ -77,15 +118,11 @@ export default function Tabs() {
               </ul>
             </div>
           )}
-
-          {tab === "personal" && (
-            <div className="pt-6 pb-6">
-              <h3 className="text-3xl font-semibold">Personal</h3>
-              <p className="mt-3 muted text-lg">Interests, hobbies, and other personal notes go here.</p>
-            </div>
-          )}
         </div>
       </div>
     </div>
   );
 }
+
+
+

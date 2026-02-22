@@ -43,6 +43,7 @@ export default function Home() {
           <p className="mt-6 muted text-lg">
            Hi! I'm James Zhou, a freshman at the University of Maryland pursuing a B.S. in Computer Science.
           </p>
+          
           <p className="mt-6 muted text-lg">
            I am an undergraduate researcher at the{' '}
            <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" className="nav-link" target="_blank" rel="noopener noreferrer" title="CLIP lab URL">Computational Linguistics and Information Processing Lab</a>{' '}
@@ -53,6 +54,7 @@ export default function Home() {
            <a href="https://zcliu.cs.umd.edu" className="nav-link" target="_blank" rel="noopener noreferrer" title="Professor URL">Dr. Leo Zhicheng Liu</a>.
           </p>
           <p className="mt-6 muted text-lg">
+            I'll be in Raleigh, North Carolina this summer working as a software engineer at <a href="https://www.firstcitizens.com/" className="nav-link" target="_blank" rel="noopener noreferrer" title="First Citizens Bank URL">First Citizens Bank</a>.
             I am also a software engineer for <a href="https://umd.hack4impact.org" className="nav-link" target="_blank" rel="noopener noreferrer" title="Hack4Impact-UMD URL">Hack4Impact-UMD</a> {' '}
              working with The Friends of Mount Vernon Trail and a technical lead for the {' '}
              <a href="https://gdg.community.dev/gdg-on-campus-university-of-maryland-college-park-united-states/" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">Google Developer Student Club</a>. 
