@@ -15,8 +15,15 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "James Zhou — Portfolio",
+  metadataBase: new URL('https://jameszhou.dev'),
+  title: "James Zhou",
   description: "Portfolio site for James Zhou — projects, writing, and contact",
+  openGraph: {
+    images: ['/umd.png'],
+  },
+  icons: {
+    icon: '/umd.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
