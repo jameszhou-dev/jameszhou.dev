@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  /* Base (keep site white) */
+  --bg: #ffffff;
+  --fg: #0f1720; /* main text */
+
+  /* Subtle green undertone */
+  --bg-accent: #f4fbf7; /* very light green used for cards / surfaces */
+  --accent: #be1212; /* primary subtle green */
+  --muted: #d61111; /* green-tinted muted text */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0b;
+    --fg: #e6eef6;
+    --muted: #9ca3af;
+    --accent: #9ca3af;
+  }
+}
+
+/* Base page styles */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Layout utilities (kept minimal — Tailwind handles most layout) */
+.site-container {
+  /* Tuned centered content area: slightly reduce margins so content is a
+    bit wider while preserving comfortable breathing room. */
+  max-width: 60rem; /* ~960px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* Separator used between the hero (top) section and the rest of the page */
+.hero-separator {
+  color: red;
+  padding-bottom: 2.75rem;
+  margin-bottom: 2.75rem;
+  /* stronger, but still subtle green divider for the hero */
+  border-bottom: 2px solid rgba(15,157,88,0.12);
+}
+
+/* About section separator (slightly lighter) */
+.about-separator {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(15,157,88,0.08);
+}
+
+header.site-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(15,157,88,0.04);
+}
+
+.nav-link {
+  color: var(--muted);
+  transition: color 160ms ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.card {
+  background: var(--bg-accent);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(11,18,32,0.04);
+}
+
+.card h3 {
+  color: var(--fg);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Small utility to apply the green accent to text when desired */
+.accent {
+  color: var(--accent);
+}
