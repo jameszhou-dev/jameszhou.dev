@@ -8,17 +8,17 @@ export default function Home() {
             <h1 className="text-6xl font-bold"><strong>James Zhou</strong></h1>
             <p className="mt-6 text-2xl muted">CS Undergrad • University of Maryland</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <a href="https://www.linkedin.com/in/jameszhoudev" target="_blank" rel="noopener noreferrer" className="nav-link inline-flex items-center">
+              <a href="https://www.linkedin.com/in/jameszhoudev" target="_blank" rel="noopener noreferrer" className="icon inline-flex items-center">
                 <img src="/linkedin.svg" alt="LinkedIn" className="black w-6 h-6 mr-2" />
                 LinkedIn
               </a>
 
-              <a href="https://github.com/jameszhou-dev" target="_blank" rel="noopener noreferrer" className="nav-link inline-flex items-center">
+              <a href="https://github.com/jameszhou-dev" target="_blank" rel="noopener noreferrer" className="icon inline-flex items-center">
                 <img src="/github.svg" alt="GitHub" className="w-6 h-6 mr-2" />
                 GitHub
               </a>
 
-              <a href="mailto:yunchengzhou@gmail.com" className="nav-link inline-flex items-center">
+              <a href="mailto:yunchengzhou@gmail.com" className="icon inline-flex items-center">
                 <img src="/mail.svg" alt="Email" className="w-6 h-6 mr-2" />
                 Email
               </a>
@@ -36,17 +36,24 @@ export default function Home() {
       {/* Top About (editable) */}
       <section id="about-top" className="site-container mt-8 about-separator">
         <div className="max-w-4xl">
-          <p className="mt-6 muted">
+          <p className="mt-6 muted text-lg">
            Hi! I'm James Zhou, a freshman at the University of Maryland pursuing a B.S. in Computer Science.
           </p>
-          <p className="mt-6 muted">
+          <p className="mt-6 muted text-lg">
            I am an undergraduate researcher at the{' '}
-           <a href="#" className="nav-link" title="Replace with CLIP lab URL">Computational Linguistics and Information Processing Lab</a>{' '}
+           <a href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" className="nav-link" target="_blank" rel="noopener noreferrer" title="CLIP lab URL">Computational Linguistics and Information Processing Lab</a>{' '}
            and the{' '}
-           <a href="#" className="nav-link" title="Replace with HDI group URL">Human-Data Interaction Group</a>, where I'm grateful to be working with{' '}
-           <a href="#" className="nav-link" title="Replace with professor URL">Dr. Mohit Iyyer</a>{' '}
+           <a href="https://hdi.cs.umd.edu" className="nav-link" target="_blank" rel="noopener noreferrer" title="HDI group URL">Human-Data Interaction Group</a>, where I'm grateful to be working with{' '}
+           <a href="https://www.cs.umd.edu/~miyyer/" className="nav-link" target="_blank" rel="noopener noreferrer" title="Professor URL">Dr. Mohit Iyyer</a>{' '}
            and{' '}
-           <a href="#" className="nav-link" title="Replace with professor URL">Dr. Leo Zhicheng Liu</a>.
+           <a href="https://zcliu.cs.umd.edu" className="nav-link" target="_blank" rel="noopener noreferrer" title="Professor URL">Dr. Leo Zhicheng Liu</a>.
+          </p>
+          <p className="mt-6 muted text-lg">
+            I am also a software engineer for <a href="https://umd.hack4impact.org" className="nav-link" target="_blank" rel="noopener noreferrer" title="Hack4Impact-UMD URL">Hack4Impact-UMD</a> {' '}
+             working with The Friends of Mount Vernon Trail and a technical lead for the {' '}
+             <a href="https://gdg.community.dev/gdg-on-campus-university-of-maryland-college-park-united-states/" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">Google Developer Student Club</a>. This summer, I will be in Raleigh, North Carolina interning at 
+             
+            {' '}<a href="https://www.firstcitizens.com" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">First Citizens Bank</a>{' '}on the Governance & Enablement team.
           </p>
           {/* Add more paragraphs or lists as you like */}
         </div>
@@ -73,7 +80,7 @@ export default function Home() {
       {/* About */}
       <section id="about" className="site-container mt-16">
         <h2 className="text-2xl font-semibold">About</h2>
-        <p className="mt-4 muted max-w-2xl">
+        <p className="mt-4 muted max-w-2xl text-lg">
           I’m a software engineer focused on building interfaces and tooling.
           I enjoy working on UX-sensitive problems and shipping well-tested
           code.

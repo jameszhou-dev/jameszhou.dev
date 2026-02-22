@@ -7,8 +7,11 @@
 
   /* Subtle green undertone */
   --bg-accent: #f4fbf7; /* very light green used for cards / surfaces */
-  --accent: #be1212; /* primary subtle green */
-  --muted: #d61111; /* green-tinted muted text */
+  --accent: #e21833; /* primary subtle green */
+  --muted: #000000; /* green-tinted muted text */
+  /* Separator color variables (tweakable) */
+  --separator-hero: rgba(141, 23, 23, 0.663);
+  --separator-about: rgba(197, 19, 19, 0.406);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +20,8 @@
     --fg: #e6eef6;
     --muted: #9ca3af;
     --accent: #9ca3af;
+    --separator-hero: rgba(15,157,88,0.18);
+    --separator-about: rgba(15,157,88,0.12);
   }
 }
 
@@ -46,18 +51,17 @@ body {
 
 /* Separator used between the hero (top) section and the rest of the page */
 .hero-separator {
-  color: red;
   padding-bottom: 2.75rem;
   margin-bottom: 2.75rem;
-  /* stronger, but still subtle green divider for the hero */
-  border-bottom: 2px solid rgba(15,157,88,0.12);
+  /* stronger, but still subtle divider for the hero */
+  border-bottom: 2px solid var(--separator-hero);
 }
 
 /* About section separator (slightly lighter) */
 .about-separator {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(15,157,88,0.08);
+  border-bottom: 1px solid var(--separator-about);
 }
 
 header.site-header {
@@ -65,14 +69,19 @@ header.site-header {
   border-bottom: 1px solid rgba(15,157,88,0.04);
 }
 
-.nav-link {
+.icon {
   color: var(--muted);
+}
+
+.icon:hover {
+  color: var(--accent);
+  transition: color 160ms ease;
+}
+.nav-link {
+  color: var(--accent);
   transition: color 160ms ease;
 }
 
-.nav-link:hover {
-  color: var(--accent);
-}
 
 .card {
   background: var(--bg-accent);
