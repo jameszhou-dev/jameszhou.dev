@@ -1,9 +1,12 @@
+import Tabs from "./components/Tabs";
+
 export default function Home() {
   return (
     <div className="pb-22">
       {/* Hero / top section */}
-  <section className="site-container pt-12 hero-separator">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+  <section className="site-container pt-12">
+        <div className="max-w-4xl hero-separator">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2">
             <h1 className="text-6xl font-bold"><strong>James Zhou</strong></h1>
             <p className="mt-6 text-2xl muted">CS Undergrad • University of Maryland</p>
@@ -30,11 +33,12 @@ export default function Home() {
               <img src="/dog.jpg" alt="James Zhou" className="w-full h-full object-cover" />
             </div>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Top About (editable) */}
-      <section id="about-top" className="site-container mt-8 about-separator">
+      <section id="about-top" className="site-container mt-8">
         <div className="max-w-4xl">
           <p className="mt-6 muted text-lg">
            Hi! I'm James Zhou, a freshman at the University of Maryland pursuing a B.S. in Computer Science.
@@ -51,47 +55,15 @@ export default function Home() {
           <p className="mt-6 muted text-lg">
             I am also a software engineer for <a href="https://umd.hack4impact.org" className="nav-link" target="_blank" rel="noopener noreferrer" title="Hack4Impact-UMD URL">Hack4Impact-UMD</a> {' '}
              working with The Friends of Mount Vernon Trail and a technical lead for the {' '}
-             <a href="https://gdg.community.dev/gdg-on-campus-university-of-maryland-college-park-united-states/" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">Google Developer Student Club</a>. This summer, I will be in Raleigh, North Carolina interning at 
-             
-            {' '}<a href="https://www.firstcitizens.com" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">First Citizens Bank</a>{' '}on the Governance & Enablement team.
+             <a href="https://gdg.community.dev/gdg-on-campus-university-of-maryland-college-park-united-states/" className="nav-link" target="_blank" rel="noopener noreferrer" title="GDSC-UMD URL">Google Developer Student Club</a>. 
           </p>
           {/* Add more paragraphs or lists as you like */}
         </div>
       </section>
+      
+  {/* Tabs container: Projects / Publications / Personal */}
+  <Tabs />
 
-      {/* Projects */}
-      <section id="projects" className="site-container mt-12">
-        <h2 className="text-2xl font-semibold">Selected projects</h2>
-
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { title: "Project A", desc: "Short description of project A" },
-            { title: "Project B", desc: "Short description of project B" },
-            { title: "Project C", desc: "Short description of project C" },
-          ].map((p) => (
-            <article key={p.title} className="card">
-              <h3 className="text-lg font-medium">{p.title}</h3>
-              <p className="mt-2 muted">{p.desc}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="site-container mt-16">
-        <h2 className="text-2xl font-semibold">About</h2>
-        <p className="mt-4 muted max-w-2xl text-lg">
-          I’m a software engineer focused on building interfaces and tooling.
-          I enjoy working on UX-sensitive problems and shipping well-tested
-          code.
-        </p>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="site-container mt-16">
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <p className="mt-4 muted">Email: hello@jameszhou.dev</p>
-      </section>
     </div>
   );
 }

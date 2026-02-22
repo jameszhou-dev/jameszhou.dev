@@ -6,24 +6,13 @@
   --fg: #0f1720; /* main text */
 
   /* Subtle green undertone */
-  --bg-accent: #f4fbf7; /* very light green used for cards / surfaces */
-  --accent: #e21833; /* primary subtle green */
-  --muted: #000000; /* green-tinted muted text */
-  /* Separator color variables (tweakable) */
+  --bg-accent: #ffffff; 
+  --accent: #e21833; 
+  --muted: #393939;
   --separator-hero: rgba(141, 23, 23, 0.663);
-  --separator-about: rgba(197, 19, 19, 0.406);
+  --separator-about: rgb(185, 185, 185);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0b0b;
-    --fg: #e6eef6;
-    --muted: #9ca3af;
-    --accent: #9ca3af;
-    --separator-hero: rgba(15,157,88,0.18);
-    --separator-about: rgba(15,157,88,0.12);
-  }
-}
 
 /* Base page styles */
 html, body, #__next {
@@ -35,33 +24,35 @@ body {
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  /* Prefer the Inter variable injected from Next's font loader, fall back to system fonts */
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 /* Layout utilities (kept minimal — Tailwind handles most layout) */
 .site-container {
-  /* Tuned centered content area: slightly reduce margins so content is a
-    bit wider while preserving comfortable breathing room. */
-  max-width: 60rem; /* ~960px */
+
+  max-width: 60rem; 
   margin-left: auto;
   margin-right: auto;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
-/* Separator used between the hero (top) section and the rest of the page */
 .hero-separator {
   padding-bottom: 2.75rem;
   margin-bottom: 2.75rem;
-  /* stronger, but still subtle divider for the hero */
-  border-bottom: 2px solid var(--separator-hero);
+  border-bottom: 2px solid var(--accent);
+}
+.about-separator {
+  margin-top: 0;
+  padding-bottom: 2.75rem;
+  border-bottom: 2px solid var(--separator-about);
 }
 
-/* About section separator (slightly lighter) */
 .about-separator {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--separator-about);
+  border-bottom: none;
 }
 
 header.site-header {
@@ -101,4 +92,45 @@ header.site-header {
 /* Small utility to apply the green accent to text when desired */
 .accent {
   color: var(--accent);
+}
+
+/* Tabs specific styles */
+.tabs-row {
+  /* keep tabs above the full-width about separator */
+  position: relative;
+}
+
+.tab-btn {
+  position: relative;
+  background: transparent;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+.tab-btn:hover {
+  cursor: pointer;
+}
+
+/* active tab text uses the site accent color */
+.tab-btn.active {
+  color: var(--accent);
+}
+
+/* underline for active tab: limited to the button width and sits above the about separator */
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: .12rem;
+  background: var(--accent);
+  bottom: -6px; /* overlap the about separator */
+  border-radius: 2px;
+  z-index: 30;
+}
+
+/* make the about separator lower so underline sits on top */
+.about-separator + .site-container .border-b,
+.about-separator + .site-container .border-b {
+  z-index: 10;
 }
